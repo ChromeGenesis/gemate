@@ -35,7 +35,7 @@ def function():
  elif clip =='2':
   print("\033[3;35m[*] Manual input....")
   url =input("Enter the video url ==> ")
- print(" Audio or Video ?")
+ print(" mp3 or mp4 ?")
  form =input("===> ")
  if form =='mp3':
   print("\033[3;35m[*] Retrieving audio format........")
