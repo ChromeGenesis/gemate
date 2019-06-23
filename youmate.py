@@ -39,12 +39,14 @@ def function():
  form =input("===> ")
  if form =='mp3':
   print("\033[3;35m[*] Retrieving audio format........")
-  ydl_opts={'ext':'mp3','postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-    }        
+  ydl_opts = {
+      'format':'bestaudio',
+      'preferredcodec':'mp3',
+      'postprocessors':[{
+          'key':'FFmpegExtractAudio',
+          }]
+      }
+      
   try:
    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
     ydl.download([url])
