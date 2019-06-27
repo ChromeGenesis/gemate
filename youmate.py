@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-import os, sys
+import os, sys, time
 
 def linux():
  print("\033[1;33m LINUX \n")
@@ -91,9 +91,11 @@ except ModuleNotFoundError:
     
   elif install =='N':
    print(" Exiting...")
+   time.sleep(2)
    exit()
   elif install =='n':
    print(" Exiting...")
+   time.sleep(2)
    exit()
   else:
    print("\033[5;34m Trouble maker")
