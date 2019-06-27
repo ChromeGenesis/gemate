@@ -76,6 +76,7 @@ except ModuleNotFoundError:
   install =input(" ===> ")
   if install =='Y':
    print("[*]Installing please wait.......")
+   time.sleep(2)
    print("[*]Checking your platform......")
    if sys.platform =='linux':
     linux()
@@ -83,6 +84,7 @@ except ModuleNotFoundError:
     windows()
   elif install =='y':                          
    print("[*] Installing please wait.......")
+   time.sleep(2)
    print("[*] Checking your platform......")
    if sys.platform =='linux':
     linux()
