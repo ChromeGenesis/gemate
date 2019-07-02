@@ -3,6 +3,7 @@ import os, sys, time
 
 def linux():
  print("\033[1;33m LINUX \n")
+ time.sleep(2.5)
  os.system("sudo apt-get update")
  os.system("sudo apt install python3-pip")
  os.system("pip3 install youtube-dl ")
@@ -12,6 +13,7 @@ def linux():
 
 def windows():
  print("\033[1;33m WINDOWS \n")
+ time.sleep(2.5)
  print("\a")
  os.system("pip install youtube-dl")
  os.system("pip install pyperclip")
@@ -29,16 +31,21 @@ def function():
   print("[*] Extracting clipboard content.....\n")
   try:
    url = pyperclip.paste()
+   time.sleep(2.5)
   except NameError:
    print("There was a problem Try choosing option 2...")
+  except pyperclip.PyperclipException:
+   print(" There doesn't seem to be any copy/paste mechanism for your os. Do try choosing option 2")
    function()
  elif clip =='2':
   print("\033[3;35m[*] Manual input....")
+  time.sleep(2.5)
   url =input("Enter the video url ==> ")
  print(" mp3 or mp4 ?")
  form =input("===> ")
  if form =='mp3':
   print("\033[3;35m[*] Retrieving audio format........")
+  time.sleep(2.5)
   ydl_opts = {
       'format':'bestaudio',
       'preferredcodec':'mp3',
@@ -55,6 +62,7 @@ def function():
    exit()
  elif form =='mp4':
   print("\033[3;34m [*] Extracting video format........")
+  time.sleep(2.5)
   ydl_opts={'ext':'mp4'}
   try:
    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -93,11 +101,11 @@ except ModuleNotFoundError:
     
   elif install =='N':
    print(" Exiting...")
-   time.sleep(2)
+   time.sleep(2.53)
    exit()
   elif install =='n':
    print(" Exiting...")
-   time.sleep(2)
+   time.sleep(2.5)
    exit()
   else:
    print("\033[5;34m Trouble maker")
