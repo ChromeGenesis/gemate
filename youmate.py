@@ -31,7 +31,7 @@ def function():
   print("[*] Extracting clipboard content.....\n")
   try:
    url = pyperclip.paste()
-   time.sleep(2.5)
+   time.sleep(1.5)
   except NameError:
    print("There was a problem Try choosing option 2...")
   except pyperclip.PyperclipException:
@@ -39,13 +39,13 @@ def function():
    function()
  elif clip =='2':
   print("\033[3;35m[*] Manual input....")
-  time.sleep(2.5)
+  time.sleep(1.5)
   url =input("Enter the video url ==> ")
  print(" mp3 or mp4 ?")
  form =input("===> ")
  if form =='mp3':
   print("\033[3;35m[*] Retrieving audio format........")
-  time.sleep(2.5)
+  time.sleep(1.5)
   ydl_opts = {
       'format':'bestaudio',
       'preferredcodec':'mp3',
@@ -62,7 +62,7 @@ def function():
    exit()
  elif form =='mp4':
   print("\033[3;34m [*] Extracting video format........")
-  time.sleep(2.5)
+  time.sleep(1.5)
   ydl_opts={'ext':'mp4'}
   try:
    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
