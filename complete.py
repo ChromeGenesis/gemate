@@ -62,11 +62,7 @@ def function():
 
     print("                 mp3 or mp4 ? ('mp3 is audio and mp4 is video')")
     form = input("GEMATE==>  ")
-    if form != 'mp3' or form != 'mp4':
-        print("Please Follow the instructions and try again later")
-        exit()
-        
-    elif form == '':
+    if form == '':
         print("No Choice, Exiting........")
         exit()
     elif form == 'mp3':
@@ -84,7 +80,10 @@ def function():
                 ydl.download([url])
         except youtube_dl.utils.DownloadError:
             pass
-            
+        
+    elif form != 'mp3' or form != 'mp4':
+        print("Please Follow the instructions and try again later")
+        exit()
             
     elif form == 'mp4':
         print("\033[3;36m[*]Extracting Video Format.........")
