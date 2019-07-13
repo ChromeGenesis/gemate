@@ -121,9 +121,9 @@ try:
     import youtube_dl
     import pyperclip
 except ModuleNotFoundError:
-    print("\033[3;91mYou dont have all the required modules.")
-    print("\033[2;37mWould you like the program to install them automatically?")
-    print("Y or N")
+    print("\033[3;91mYou dont have all the required modules.\n")
+    print("\033[3;94mWould you like the program to install them automatically?")
+    print("                           (Y or N)")
     install = input("GEMATE==> ")
     if install == 'Y' or install == 'y':
         print("[*]Installing Please wait.......")
