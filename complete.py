@@ -80,10 +80,6 @@ def function():
                 ydl.download([url])
         except youtube_dl.utils.DownloadError:
             pass
-        
-    elif form != 'mp3' or form != 'mp4':
-        print("Please Follow the instructions and try again later")
-        exit()
             
     elif form == 'mp4':
         print("\033[3;36m[*]Extracting Video Format.........")
@@ -95,6 +91,10 @@ def function():
                 ydl.download([url])
         except youtube_dl.utils.DownloadError:
             pass
+        
+    else:
+        print("Please Follow the instructions and try again later")
+        exit()
 
     print("\033[3;32mDo you want to perform another Download? \nY or N")
     down = input("GEMATE==> ")
