@@ -5,6 +5,10 @@ You could also try using it with other sites
 
 see the list of supported sites here ==> https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md
 
+#Compatibility
+This program is compatible with Windows and Linux
+FOR NOW.........
+
 # Download
 git clone https://github.com/Genesis123456/Youmate
 
