@@ -1,7 +1,12 @@
 from __future__ import unicode_literals
 import os, sys, time
 
-
+def clear():
+    if sys.platform == 'linux':
+        os.system("clear")
+    elif sys.platform == 'win32':
+        os.system("cls")
+    
 def linux():
     print("                    ==++===========++==")
     print("                            LINUX       ")
@@ -26,10 +31,7 @@ def windows():
     function()
 
 def function():
-    if sys.platform == 'linux':
-        os.system("clear")
-    elif sys.platform == 'win32':
-        os.system("cls")
+    clear()
     print("\033[;1;94m(For audio conversion: \033[;2;95mThis program requires ffmpeg, install it for Linux (and other command-line OSes) by running 'apt-get install ffmpeg'. For windows, You can download the package online and convert it manually......)\n")
     print("\033[1;33m*** Copy/Paste to you browser to view a list of youtube-dl supported sites ***\n")
     print(" https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md \n")
@@ -37,7 +39,12 @@ def function():
     print("1. Take the url from the clipboard automatically")
     print("2. Type/paste the url manually\n")
     clip = input("GEMATE==> ")
-    if clip == '1':
+    if clip == '':
+        print("\033[1;31mNo choice, exiting.....")
+        time.sleep(1.5)
+        clear()
+        exit()
+    elif clip == '1':
         print("\n                   [*]Extracting clipboard content........")
         try:
             url = pyperclip.paste()
@@ -50,7 +57,6 @@ def function():
         except pyperclip.PyperclipException:
             print("Your platform doesn't seem to possess any copy/paste mechanism, Do try choosing option 2")
             time.sleep(3.5)
-
     elif clip == '2':
         print("\033[3;32m                         [*]Manual input....")
         time.sleep(0.5)
@@ -59,13 +65,22 @@ def function():
             print("\nYou didn't provide any url. ",end='')
             print("exiting......")
             exit()
+    else:
+        print("\033[1;31mError follow the instructions")
+        time.sleep(1.5)
+        clear()
+        exit()
 
-    print("                 mp3 or mp4 ? ('mp3 is audio and mp4 is video')")
+    print("\nChoose your file Format.")
+    print("\n                 [1.] mp3 ('mp3 is audio')")
+    print("                 [2.] mp4 ('mp4 is video')")
     form = input("GEMATE==>  ")
     if form == '':
         print("No Choice, Exiting........")
+        time.sleep(1.5)
+        clear()
         exit()
-    elif form == 'mp3':
+    elif form == '1':
         print("\033[3;35m[*]Retrieving audio format........")
         time.sleep(0.5)
         ydl_opts = {
@@ -81,7 +96,7 @@ def function():
         except youtube_dl.utils.DownloadError:
             pass
             
-    elif form == 'mp4':
+    elif form == '2':
         print("\033[3;36m[*]Extracting Video Format.........")
         time.sleep(0.5)
         ydl_opts = {'ext':'mp4'}
@@ -105,11 +120,8 @@ def function():
     elif down == 'n' or down == 'N':    
         print("THANKS FOR USING GEMATE.........")
         time.sleep(2.5)
-        if sys.platform == 'linux':
-           os.system("clear")
-    elif sys.platform == 'win32':
-           os.system("cls")
-           exit()
+        clear()
+        exit()
     else:
         print("\033[1;31mError, Please follow the instructions.")
         exit()
