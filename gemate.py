@@ -71,7 +71,7 @@ def function():
         clear()
         exit()
 
-    print("\nChoose your file Format.")
+    print("\nChoose your file Format, 1 or 2")
     print("\n                 [1.] mp3 ('mp3 is audio')")
     print("                 [2.] mp4 ('mp4 is video')")
     form = input("GEMATE==>  ")
