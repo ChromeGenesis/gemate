@@ -57,6 +57,7 @@ def function():
         except pyperclip.PyperclipException:
             print("Your platform doesn't seem to possess any copy/paste mechanism, Do try choosing option 2")
             time.sleep(3.5)
+            function()
     elif clip == '2':
         print("\033[3;32m                         [*]Manual input....")
         time.sleep(0.5)
