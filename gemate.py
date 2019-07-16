@@ -134,6 +134,7 @@ try:
     import youtube_dl
     import pyperclip
 except ModuleNotFoundError:
+    clear()
     print("\033[3;91mYou dont have all the required modules.\n")
     print("\033[3;94mWould you like the program to install them automatically?")
     print("                           (Y or N)")
