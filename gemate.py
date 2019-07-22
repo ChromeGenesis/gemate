@@ -103,7 +103,7 @@ def function():
         clear()
         exit()
     elif form == '1':
-        print("\033[3;36mPro tip: type (./) if you want to save the audio in the same directory you are right now. Without the brackets of course.",end='')
+        print("\033[3;36mPro tip: type (./) or just hit enter if you want to save the audio in the same directory you are right now. Without the brackets of course.",end='')
         print(" Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/'\n")
         dest = input("\033[3;35mEnter the destination you want to save the audio ==> ")
         print("[*]Retrieving audio format........")
@@ -128,7 +128,7 @@ def function():
             exit()
             
     elif form == '2':
-        print("Pro tip: type (./) if you want to save the video in the same directory you are right now. Without the brackets of course.",end='')
+        print("Pro tip: type (./) or just hit enter if you want to save the video in the same directory you are right now. Without the brackets of course.",end='')
         print(" Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/' for windows \n")
         dest = input("Enter the destination you want to save the video ==> ")
         print("\033[3;36m[*]Extracting Video Format.........")
