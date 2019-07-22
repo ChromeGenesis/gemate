@@ -103,8 +103,8 @@ def function():
         clear()
         exit()
     elif form == '1':
-        print("\033[3;36mPro tip: type (./) if you want to save the audio in the same directory you are right now. Without the brackets of course",end='')
-        print("Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/'\n")
+        print("\033[3;36mPro tip: type (./) if you want to save the audio in the same directory you are right now. Without the brackets of course.",end='')
+        print(" Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/'\n")
         dest = input("\033[3;35mEnter the destination you want to save the audio ==> ")
         print("[*]Retrieving audio format........")
         time.sleep(0.5)
@@ -128,8 +128,8 @@ def function():
             exit()
             
     elif form == '2':
-        print("Pro tip: type (./) if you want to save the video in the same directory you are right now. Without the brackets of course",end='')
-        print("Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/' for windows \n")
+        print("Pro tip: type (./) if you want to save the video in the same directory you are right now. Without the brackets of course.",end='')
+        print(" Your input should look like this '/home/username/folder/' for linux and 'C:/Users/username/folder/' for windows \n")
         dest = input("Enter the destination you want to save the video ==> ")
         print("\033[3;36m[*]Extracting Video Format.........")
         time.sleep(0.5)
@@ -159,7 +159,7 @@ def function():
         function()
     elif down == 'n' or down == 'N':    
         print("THANKS FOR USING GEMATE.........")
-        time.sleep(2)
+        time.sleep(1.5)
         clear()
         exit()
     else:
@@ -182,7 +182,7 @@ except ModuleNotFoundError:
     install = input("GEMATE==> ")
     if install == 'Y' or install == 'y':
         print("[*]Installing Please wait.......")
-        time.sleep(2)
+        time.sleep(1.5)
         print("Checking your platform.......\n")
         if sys.platform == 'linux':
             linux()
@@ -190,12 +190,12 @@ except ModuleNotFoundError:
             windows()
     elif install == 'N' or install == 'n':
         print("Exiting......")
-        time.sleep(2.5)
+        time.sleep(1.5)
         clear()
         exit()
     else:
         print("\033[1;31mTrouble maker")
-        time.sleep(2.5)
+        time.sleep(1.5)
         clear()
         exit()
 
