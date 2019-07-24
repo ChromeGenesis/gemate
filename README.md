@@ -15,7 +15,7 @@ git clone https://github.com/Genesis123456/Youmate
 # Usage
 chmod +x youmate.py
 
-python3 youmate.py
+python3 gemate.py
 
 # Report
 Please report bugs to me ......
