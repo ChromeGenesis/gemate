@@ -13,7 +13,9 @@ FOR NOW.........
 git clone https://github.com/Genesis123456/Youmate
 
 # Usage
-chmod +x youmate.py
+cd gemate
+
+chmod +x gemate.py
 
 python3 gemate.py
 
