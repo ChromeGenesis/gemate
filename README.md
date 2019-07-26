@@ -1,4 +1,4 @@
-# Youmate
+# gemate
 You can use this program to download youtube videos and audios...
 
 You could also try using it with other sites
