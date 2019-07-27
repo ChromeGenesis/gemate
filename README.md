@@ -22,3 +22,6 @@ python3 gemate.py
 # Report
 Please report bugs to me ......
 Thanks
+
+# Gui
+Gui version coming up soon support is appreciated
