@@ -14,7 +14,7 @@ def clear():
 #Install packages in linux platform 
 def linux():
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("           %%%%%%%%%%%%%% L\033[3;32mINU\033[3;31mX\033[3;94m %%%%%%%%%%%%%")
+    print("          %%%%%%%%%%%%%% L\033[3;32mINU\033[3;31mX\033[3;94m %%%%%%%%%%%%% ")
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     time.sleep(2.5)
     print("\033[3;31m")
@@ -31,7 +31,7 @@ def linux():
 #Install packages in windows platform
 def windows():
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("           %%%%%%%%%%%% W\033[3;32mINDOW\033[3;31mS\033[3;94m %%%%%%%%%%%")
+    print("           %%%%%%%%%%%% W\033[3;32mINDOW\033[3;31mS\033[3;94m %%%%%%%%%%% ")
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     time.sleep(2.5)
     s = os.system
@@ -44,6 +44,12 @@ def windows():
 #The main download and additions
 def function():
     clear()
+    print("\033[3;31m        ____                      _             ") 
+    print("\033[3;32m  |    / ___| ___ _ __ ___   __ _| |_ ___    |  ")
+    print("\033[3;33m  |   | |  _ / _ \ '_ ` _ \ / _` | __/ _ \   |  ")
+    print("\033[3;34m  |   | |_| |  __/ | | | | | (_| | ||  __/   |  ")
+    print("\033[3;35m  |    \____|\___|_| |_| |_|\__,_|\__\___|   |  \n")
+                                    
     print("\033[;1;94m(For audio conversion: \033[;2;95mThis program requires ffmpeg, install it for Linux (and other command-line OSes) by running 'apt-get install ffmpeg'. For windows, You can download the package online and convert it manually......)\n")
     print("\033[1;33m*** Copy/Paste to you browser to view a list of youtube-dl supported sites ***\n")
     print(" https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md \n")
@@ -191,8 +197,9 @@ def function():
     
      
         
-clear()        
+        
 try:
+    clear()
     import youtube_dl
     import pyperclip
 except ModuleNotFoundError:
