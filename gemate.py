@@ -197,9 +197,8 @@ def function():
     
      
         
-        
+clear()        
 try:
-    clear()
     import youtube_dl
     import pyperclip
 except ModuleNotFoundError:
