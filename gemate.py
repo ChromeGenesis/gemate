@@ -130,7 +130,7 @@ def function():
         'postprocessors': [{
         'key': 'FFmpegExtractAudio',
         'preferredcodec': 'mp3',
-        'preferredquality': '320',}],
+        'preferredquality': '128',}],
     }
         try:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
