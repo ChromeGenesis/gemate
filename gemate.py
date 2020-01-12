@@ -1,20 +1,28 @@
 from __future__ import unicode_literals
-import os, sys, time
+import os
+import sys
+import time
 
-#Clear the console or the command prompt for both platforms
+# Clear the console or the command prompt for both platforms
+
+
 def clear():
     if sys.platform == 'linux':
         os.system("clear")
     elif sys.platform == 'win32':
         os.system("cls")
     else:
-        print("\033[1;31mThis program is only compatible with windows and linux for now.")
+        print(
+            "\033[1;31mThis program is only compatible with windows and linux for now.")
         exit()
 
-#Install packages in linux platform
+# Install packages in linux platform
+
+
 def linux():
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("          %%%%%%%%%%%%%% L\033[3;32mINU\033[3;31mX\033[3;94m %%%%%%%%%%%%% ")
+    print(
+        "          %%%%%%%%%%%%%% L\033[3;32mINU\033[3;31mX\033[3;94m %%%%%%%%%%%%% ")
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     time.sleep(2.5)
     print("\033[3;31m")
@@ -24,14 +32,17 @@ def linux():
     s("pip3 install youtube-dl")
     s("pip3 install pyperclip")
     s("clear")
-    #Restart the program, to fully initiate installations
+    # Restart the program, to fully initiate installations
     os.execv(sys.executable, ['python'] + sys.argv)
     main()
 
-#Install packages in windows platform
+# Install packages in windows platform
+
+
 def windows():
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("           %%%%%%%%%%%% W\033[3;32mINDOW\033[3;31mS\033[3;94m %%%%%%%%%%% ")
+    print(
+        "           %%%%%%%%%%%% W\033[3;32mINDOW\033[3;31mS\033[3;94m %%%%%%%%%%% ")
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     time.sleep(2.5)
     s = os.system
@@ -41,7 +52,9 @@ def windows():
     os.execv(sys.executable, ['python'] + sys.argv)
     main()
 
-#The main download and additions
+# The main download and additions
+
+
 def main():
     clear()
     print("\033[3;31m        ____                      _             ")
@@ -62,43 +75,44 @@ def main():
         time.sleep(1.5)
         clear()
         exit()
-    #Extract clipboard contents, (thanks to Al-Swiegart)
+    # Extract clipboard contents, (thanks to Al-Swiegart)
     elif clip == '1':
         print("\n                   [*]Extracting clipboard content........")
         try:
             url = pyperclip.paste()
             if url == '':
-                print("Your clipboard doesn't seem to have any contents. ", end = '')
+                print("Your clipboard doesn't seem to have any contents. ", end='')
                 print("exiting.....")
                 time.sleep(1.5)
                 clear()
                 exit()
             else:
                 print("                                 Done")
-        #Usually happens in termux (Android based consoles)
+        # Usually happens in termux (Android based consoles)
         except pyperclip.PyperclipException:
-            print("Your platform doesn't seem to possess any copy/paste mechanism, Do try choosing option 2")
+            print(
+                "Your platform doesn't seem to possess any copy/paste mechanism, Do try choosing option 2")
             time.sleep(3.5)
             main()
-    #Seeing that you're hardworking, enter the url manually
+    # Seeing that you're hardworking, enter the url manually
     elif clip == '2':
         print("\033[3;32m                         [*]Manual input....")
         time.sleep(0.5)
         url = input("Enter the video url ==> ")
         if url == '':
-            print("\nYou didn't provide any url. ",end='')
+            print("\nYou didn't provide any url. ", end='')
             print("exiting......")
             time.sleep(2)
             clear()
             exit()
-    #Trouble maker
+    # Trouble maker
     else:
         print("\033[1;31mError, please follow the instructions")
         time.sleep(1.5)
         clear()
         exit()
 
-    #Audio or video?, make your choice
+    # Audio or video?, make your choice
     print("\nChoose your file Format, 1 or 2")
     print("\n                 [1.] mp3 ('mp3 is audio')")
     print("                 [2.] mp4 ('mp4 is video')")
@@ -110,7 +124,8 @@ def main():
         exit()
     elif form == '1':
         print("\033[3;36mPro tip: type (./) if you want to save the audio in the same directory you are right now. Without the brackets of course. or just hit enter to save it in your music folder\n")
-        dest = input("\033[3;35mEnter the destination you want to save the audio ==> ")
+        dest = input(
+            "\033[3;35mEnter the destination you want to save the audio ==> ")
         if dest == '':
             if sys.platform == 'linux':
                 print("No input, Saving in /home/username/Music ...\n")
@@ -125,13 +140,13 @@ def main():
         print("[*]Retrieving audio format........")
         time.sleep(0.5)
         ydl_opts = {
-        'format': 'bestaudio/best',
-        'outtmpl':save+'%(title)s.%(ext)s',
-        'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'mp3',
-        'preferredquality': '128',}],
-    }
+            'format': 'bestaudio/best',
+            'outtmpl': save+'%(title)s.%(ext)s',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '128', }],
+        }
         try:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
@@ -160,8 +175,8 @@ def main():
 
         print("\033[3;36m[*]Extracting Video Format.........")
         time.sleep(0.5)
-        ydl_opts = {'ext':'mp4',
-                    'outtmpl':save+'%(title)s.%(ext)s',}
+        ydl_opts = {'ext': 'mp4',
+                    'outtmpl': save+'%(title)s.%(ext)s', }
 
         try:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -194,7 +209,6 @@ def main():
         time.sleep(1.5)
         clear()
         exit()
-
 
 
 clear()
