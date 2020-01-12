@@ -10,8 +10,8 @@ def clear():
     else:
         print("\033[1;31mThis program is only compatible with windows and linux for now.")
         exit()
-        
-#Install packages in linux platform 
+
+#Install packages in linux platform
 def linux():
     print("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("          %%%%%%%%%%%%%% L\033[3;32mINU\033[3;31mX\033[3;94m %%%%%%%%%%%%% ")
@@ -26,7 +26,7 @@ def linux():
     s("clear")
     #Restart the program, to fully initiate installations
     os.execv(sys.executable, ['python'] + sys.argv)
-    function()
+    main()
 
 #Install packages in windows platform
 def windows():
@@ -39,17 +39,17 @@ def windows():
     s("pip install pyperclip")
     s("cls")
     os.execv(sys.executable, ['python'] + sys.argv)
-    function()
-    
+    main()
+
 #The main download and additions
-def function():
+def main():
     clear()
-    print("\033[3;31m        ____                      _             ") 
+    print("\033[3;31m        ____                      _             ")
     print("\033[3;32m  |    / ___| ___ _ __ ___   __ _| |_ ___    |  ")
     print("\033[3;33m  |   | |  _ / _ \ '_ ` _ \ / _` | __/ _ \   |  ")
     print("\033[3;34m  |   | |_| |  __/ | | | | | (_| | ||  __/   |  ")
     print("\033[3;35m  |    \____|\___|_| |_| |_|\__,_|\__\___|   |  \n")
-                                    
+
     print("\033[;1;94m(For audio conversion: \033[;2;95mThis program requires ffmpeg, install it for Linux (and other command-line OSes) by running 'apt-get install ffmpeg'. For windows, You can download the package online and convert it manually......)\n")
     print("\033[1;33m*** Copy/Paste to you browser to view a list of youtube-dl supported sites ***\n")
     print(" https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md \n")
@@ -62,7 +62,7 @@ def function():
         time.sleep(1.5)
         clear()
         exit()
-    #Extract clipboard contents, (thanks to Al-Swiegart)    
+    #Extract clipboard contents, (thanks to Al-Swiegart)
     elif clip == '1':
         print("\n                   [*]Extracting clipboard content........")
         try:
@@ -75,12 +75,12 @@ def function():
                 exit()
             else:
                 print("                                 Done")
-        #Usually happens in termux (Android based consoles)        
+        #Usually happens in termux (Android based consoles)
         except pyperclip.PyperclipException:
             print("Your platform doesn't seem to possess any copy/paste mechanism, Do try choosing option 2")
             time.sleep(3.5)
-            function()
-    #Seeing that you're hardworking, enter the url manually        
+            main()
+    #Seeing that you're hardworking, enter the url manually
     elif clip == '2':
         print("\033[3;32m                         [*]Manual input....")
         time.sleep(0.5)
@@ -91,13 +91,13 @@ def function():
             time.sleep(2)
             clear()
             exit()
-    #Trouble maker        
+    #Trouble maker
     else:
         print("\033[1;31mError, please follow the instructions")
         time.sleep(1.5)
         clear()
         exit()
-        
+
     #Audio or video?, make your choice
     print("\nChoose your file Format, 1 or 2")
     print("\n                 [1.] mp3 ('mp3 is audio')")
@@ -142,9 +142,9 @@ def function():
             time.sleep(0.7)
             clear()
             exit()
-            
+
     elif form == '2':
-        print("\033[3;35mPro tip: type (./) if you want to save the video in the same directory you are right now. Without the brackets of course. Or just Hit enter to save in your videos folder\n")    
+        print("\033[3;35mPro tip: type (./) if you want to save the video in the same directory you are right now. Without the brackets of course. Or just Hit enter to save in your videos folder\n")
         dest = input("Enter the destination you want to save the video ==> ")
         if dest == '':
             if sys.platform == 'linux':
@@ -157,7 +157,7 @@ def function():
                 clear()
         else:
             save = dest
-        
+
         print("\033[3;36m[*]Extracting Video Format.........")
         time.sleep(0.5)
         ydl_opts = {'ext':'mp4',
@@ -173,7 +173,7 @@ def function():
             time.sleep(0.7)
             clear()
             exit()
-        
+
     else:
         print("Please Follow the instructions and try again later")
         exit()
@@ -183,8 +183,8 @@ def function():
     if down == 'y' or down == 'Y':
         print("[*]Continuing........")
         time.sleep(0.5)
-        function()
-    elif down == 'n' or down == 'N':    
+        main()
+    elif down == 'n' or down == 'N':
         print("THANKS FOR USING GEMATE.........")
         time.sleep(2)
         clear()
@@ -194,10 +194,10 @@ def function():
         time.sleep(1.5)
         clear()
         exit()
-    
-     
-        
-clear()        
+
+
+
+clear()
 try:
     import youtube_dl
     import pyperclip
@@ -226,4 +226,4 @@ except ModuleNotFoundError:
         exit()
 
 if __name__ == '__main__':
-    function()        
+    main()
