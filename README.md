@@ -10,7 +10,7 @@ This program is compatible with Windows and Linux
 FOR NOW.........
 
 # Download
-git clone https://github.com/Genesis123456/Youmate
+git clone https://github.com/Genesis123456/gemate
 
 # Usage
 cd gemate
