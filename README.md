@@ -10,7 +10,7 @@ This program is compatible with Windows and Linux
 FOR NOW.........
 
 # Download
-git clone https://github.com/Genesis123456/gemate
+git clone https://github.com/ChromeGenesis/gemate
 
 # Usage
 cd gemate
